@@ -75,3 +75,46 @@ uniqueInOrder('AAAABBBCCDAABBB'); // == ['A', 'B', 'C', 'D', 'A', 'B']
 uniqueInOrder('ABBCcAD'); // == ['A', 'B', 'C', 'c', 'A', 'D']
 uniqueInOrder([1, 2, 2, 3, 3]); // == [1, 2, 3]
 uniqueInOrder([]);
+
+// Create a function ```shuffleIt```. The function accepts two or more parameters. The first parameter arr is an array of numbers, followed by an arbitrary number of numeric arrays. Each numeric array contains two numbers, which are indices for elements in arr (the numbers will always be within bounds). For every such array, swap the elements. Try to use all your new skills: arrow functions, the spread operator, destructuring, and rest parameters.
+
+// Example:
+// ```
+// shuffleIt([1,2,3,4,5],[1,2]) should return [1,3,2,4,5]
+// shuffleIt([1,2,3,4,5],[1,2],[3,4]) should return [1,3,2,5,4]
+// shuffleIt([1,2,3,4,5],[1,2],[3,4],[2,3]) should return [1,3,5,2,4]
+// ```
+
+function shuffleIt(arr) {
+    for (var _len2 = arguments.length, args = Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+        args[_key2 - 1] = arguments[_key2];
+    }
+
+    for (var i = 0; i < args.length; i++) {
+        console.log('kolejność iteracji: ' + i);
+        console.log('lenght of args.length' + args.length);
+        console.log('args[i][1]' + args[i][1]);
+        var _ref = [args[i][0], args[i][1]],
+            a = _ref[0],
+            b = _ref[1];
+
+        console.log('wartości indeksów do zamiany');
+        console.log(a);
+        console.log(b);
+        console.log('wartości tablicy o tych indeksach:');
+        console.log(arr[a]);
+        console.log(arr[b]);
+        var _ref2 = [arr[a], arr[b]];
+        arr[b] = _ref2[0];
+        arr[a] = _ref2[1];
+
+        console.log('po wykonaniu zamiany');
+        console.log(arr[a]);
+        console.log(arr[b]);
+        console.log(arr);
+    }
+    return arr;
+}
+shuffleIt([1, 2, 3, 4, 5], [1, 2]);
+shuffleIt([1, 2, 3, 4, 5], [1, 2], [3, 4]);
+shuffleIt([1, 2, 3, 4, 5], [1, 2], [3, 4], [2, 3]);
