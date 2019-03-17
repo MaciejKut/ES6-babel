@@ -72,22 +72,10 @@ uniqueInOrder([]);
 
 function shuffleIt(arr, ...args) {
     for (var i = 0; i < args.length; i++) {
-        console.log('kolejność iteracji: ' + i);
-        console.log('lenght of args.length' + args.length);
-        console.log('args[i][1]' + args[i][1]);
-        var [a, b] = [args[i][0], args[i][1]]
-        console.log('wartości indeksów do zamiany');
-        console.log(a);
-        console.log(b);
-        console.log('wartości tablicy o tych indeksach:');
-        console.log(arr[a]);
-        console.log(arr[b]);
-        [arr[b], arr[a]] = [arr[a], arr[b]]
-        console.log('po wykonaniu zamiany');
-        console.log(arr[a]);
-        console.log(arr[b]);
-        console.log(arr);
+        var [a, b] = [args[i][0], args[i][1]];
+        [arr[b], arr[a]] = [arr[a], arr[b]];
     }
+    console.log(arr);
     return arr;
 }
 shuffleIt([1, 2, 3, 4, 5], [1, 2]);

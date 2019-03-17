@@ -91,28 +91,14 @@ function shuffleIt(arr) {
     }
 
     for (var i = 0; i < args.length; i++) {
-        console.log('kolejność iteracji: ' + i);
-        console.log('lenght of args.length' + args.length);
-        console.log('args[i][1]' + args[i][1]);
         var _ref = [args[i][0], args[i][1]],
             a = _ref[0],
             b = _ref[1];
-
-        console.log('wartości indeksów do zamiany');
-        console.log(a);
-        console.log(b);
-        console.log('wartości tablicy o tych indeksach:');
-        console.log(arr[a]);
-        console.log(arr[b]);
         var _ref2 = [arr[a], arr[b]];
         arr[b] = _ref2[0];
         arr[a] = _ref2[1];
-
-        console.log('po wykonaniu zamiany');
-        console.log(arr[a]);
-        console.log(arr[b]);
-        console.log(arr);
     }
+    console.log(arr);
     return arr;
 }
 shuffleIt([1, 2, 3, 4, 5], [1, 2]);
